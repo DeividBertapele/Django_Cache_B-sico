@@ -1,0 +1,13 @@
+{% load cache %}
+
+<h1>{% cache 60 titulo %} Olá Mundo {% endcache %} {{x}}</h1>
+
+{% cache 60 user %}
+
+{% for usuario in usuarios %}
+    <p>{{usuario.name}}</p>
+    <p>{{usuario.email}}</p>
+    <hr>
+{% endfor %}
+
+{% endcache 60 user %}
